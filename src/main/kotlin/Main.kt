@@ -50,9 +50,7 @@ fun topological_sort(list : HashMap<String,ArrayList<String>>, indegree : HashMa
 
 data class Node(val value : String, val priority : Int) : Comparable<Node> {
     override fun compareTo(other: Node): Int {
-        if (priority == other.priority) {
-            return value.compareTo(other.value)
-        }
+        if (priority == other.priority) { value.compareTo(other.value) }
         return this.priority - other.priority
     }
 }

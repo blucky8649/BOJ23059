@@ -68,7 +68,7 @@ galeforce
 
 위상 정렬에 관한 설명은 따로 포스팅할 예정이라서 본문에서 자세하게 설명하지 못하는 점 양해 부탁드립니다.
 
-```
+```java
 /** 인접리스트와 Indegree 정보를 담을 HashMap 선언 **/
 HashMap<String, ArrayList<String>> list = new HashMap<>();
 HashMap<String, Integer> indegree = new HashMap<>();
@@ -84,7 +84,7 @@ HashMap<String, Integer> indegree = new HashMap<>();
 찾은 아이템을 우선순위에 맞춰 사전순으로 정렬해주는 과정이 필요하다. ~~(필자는 이걸 못보고 맞왜틀을 시전하고 있었다.)~~
 
 따라서 결과값을 우선순위, 사전순으로 정렬을 하기 위해서 다음과 같은 Data class를 선언해주었다.
-```
+```java
 class Node implements Comparable<Node>{
     String value;
     int priority;
@@ -103,7 +103,7 @@ class Node implements Comparable<Node>{
 }
 ```
 이후 다음 위상정렬 코드를 보자.
-```
+```java
 static void topological_sort(HashMap<String, ArrayList<String>> list, HashMap<String, Integer> indegree) {
         Queue<Node> q = new LinkedList<>();
         PriorityQueue<Node> result = new PriorityQueue<>();
@@ -144,7 +144,7 @@ static void topological_sort(HashMap<String, ArrayList<String>> list, HashMap<St
 
 ## Source Code
 ### Java
-```
+```java
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -225,7 +225,7 @@ class Node implements Comparable<Node>{
 }
 ```
 ### Kotlin
-```
+```kotlin
 import java.util.*
 import kotlin.collections.*
 
